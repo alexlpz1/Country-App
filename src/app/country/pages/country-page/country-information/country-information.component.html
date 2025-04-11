@@ -1,0 +1,44 @@
+<section class="mx-auto max-w-5xl p-6 space-y-10">
+    <!-- Estadísticas del país -->
+    <section class="stats shadow-lg bg-base-100 rounded-xl">
+      <div class="stat text-center">
+        <div class="stat-title text-gray-500">Población</div>
+        <div class="stat-value text-primary">{{ country().population | number }}</div>
+        <div class="stat-desc">Desde {{ currentYear() }}</div>
+      </div>
+  
+      <div class="stat text-center">
+        <div class="stat-title text-gray-500">Nombre</div>
+        <div class="stat-value text-secondary">{{ country().name }}</div>
+        <div class="stat-desc">{{ country().region }}</div>
+      </div>
+  
+      <div class="stat text-center">
+        <div class="stat-title text-gray-500">Subregión</div>
+        <div class="stat-value text-accent">{{ country().subRegion }}</div>
+        <div class="stat-desc">{{ country().region }}</div>
+      </div>
+  
+      <div class="stat text-center">
+        <div class="stat-title text-gray-500">Bandera (Código)</div>
+        <div class="stat-value">{{ country().flag }}</div>
+        <div class="stat-desc">{{ country().subRegion }}</div>
+      </div>
+    </section>
+  
+    <!-- Bandera con efecto visual -->
+    <section class="diff aspect-[16/9]">
+        <div class="diff-item-1">
+          <img [alt]="country().name" [src]="country().flagSvg" />
+        </div>
+        <div class="diff-item-2">
+          <img
+            class="blur brightness-75"
+            [alt]="country().name"
+            [src]="country().flagSvg"
+          />
+        </div>
+        <div class="diff-resizer"></div>
+      </section>
+  </section>
+  
